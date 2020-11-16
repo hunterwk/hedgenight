@@ -2,11 +2,11 @@ const db = require("../models");
 const jwt = require("jsonwebtoken");
 
 const createToken = (user) => {
-  const ONE_HOUR = 3600;
+  const ONE_DAY = 86400;
   const payload = {
     id: user.id,
     username: user.username,
-    exp: Math.floor(Date.now() / 1000) + ONE_HOUR,
+    exp: Math.floor(Date.now() / 1000) + ONE_DAY,
   };
   return jwt.sign(payload, process.env.SERVER_SECRET);
 };
