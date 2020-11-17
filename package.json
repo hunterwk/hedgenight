@@ -13,6 +13,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"npm:server\" \"npm:client\"",
     "server": "nodemon server.js --ignore client 'client/*'",
+    "seed": "node scripts/seedDB.js",
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
     "postinstall": "cd client && npm i"
