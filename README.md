@@ -59,3 +59,8 @@ git commit -m "Initial commit"
 2. Provision a Mongo Database (MongoDB Atlas provides a free sandbox cluster)
 3. Add `SERVER_SECRET` and `MONGODB_URI` to the Heroku config.
 4. Go back and click "Deploy"
+
+###
+
+NPM RUN SEED to build a user record with notes data.  
+

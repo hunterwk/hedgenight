@@ -17,6 +17,22 @@ const schema = new mongoose.Schema({
   },
 
   // add additional user fields as needed
+  tasks: [
+    {
+        name: {
+            type: String,
+            trim: true
+        },
+        notes: {
+            type: String,
+            trim: true
+        },
+        
+        duration: {
+            type: Number
+        },
+    },
+],
 });
 
 // hash password before saving when the password is new or changed.

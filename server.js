@@ -11,8 +11,13 @@ if (!process.env.SERVER_SECRET) {
   throw new Error("SERVER_SECRET is not set.");
 }
 
-const uri = process.env.MONGODB_URI || "mongodb://localhost/temp";
-mongoose.connect(uri, { useNewUrlParser: true });
+const uri = process.env.MONGODB_URI || "mongodb://localhost/hedgenight";
+mongoose.connect(uri, { 
+  useNewUrlParser: true,  
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 
 const app = express();
 
