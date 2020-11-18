@@ -73,6 +73,9 @@ function LoginPage() {
           Submit
         </button>
       </form>
+      <div>
+        <a href="/signup">New here? Sign up!</a>
+      </div>
     </div>
   );
 }
