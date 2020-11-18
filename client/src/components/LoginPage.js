@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useAuth } from "../util/authContext";
 
 const styles = {
@@ -73,6 +73,10 @@ function LoginPage() {
           Submit
         </button>
       </form>
+      <div>
+        <a href="/signup">New here? Sign up!</a>
+
+      </div>
     </div>
   );
 }
