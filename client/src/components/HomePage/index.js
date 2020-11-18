@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import API from "../util/API";
-import Timer from "./Timer/Timer";
+import API from "../../util/API";
+import Timer from "../Timer/Timer";
 
 function HomePage() {
   const [data, setData] = useState(null);
