@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+
 //using this package will allow us to store the seconds state as a number when it is added to the database for easier usage later
 const TimeFormat = require ('hh-mm-ss')
 
@@ -44,6 +45,7 @@ const Timer = () => {
         <button className={`button button-secondary`} onClick={save}>
           Save
         </button>
+        
       </div>
     </div>
   );

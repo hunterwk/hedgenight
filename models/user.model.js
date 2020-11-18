@@ -1,9 +1,10 @@
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-
+const {Schema, Types, model} = require("mongoose")
+const Tasks = require("./tasks");
 const SALT_ROUNDS = 10;
 
-const schema = new mongoose.Schema({
+const schema = Schema({
   username: {
     type: String,
     minlength: 6,
@@ -15,24 +16,15 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  // tasks: [Tasks],
 
-  // add additional user fields as needed
-  tasks: [
-    {
-        name: {
-            type: String,
-            trim: true
-        },
-        notes: {
-            type: String,
-            trim: true
-        },
-        
-        duration: {
-            type: Number
-        },
-    },
-],
+
+  //referencing tasks schema and dividing it up by object ID
+  //will be an array of IDs 
+  tasks: [{
+    type: Types.ObjectId, //Schema.Types.ObjectId 
+    ref:"Tasks",
+  }]
 });
 
 // hash password before saving when the password is new or changed.
@@ -47,5 +39,5 @@ schema.pre("save", function () {
 schema.methods.comparePassword = function compareUserPassword(candidate) {
   return bcrypt.compare(candidate, this.password);
 };
-const User = mongoose.model("User", schema);
+const User = model("User", schema);
 module.exports = User;
