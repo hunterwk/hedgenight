@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../../util/API";
+import GoT from "../GoTblock";
 import Timer from "../Timer";
 
 function HomePage() {
@@ -11,10 +12,12 @@ function HomePage() {
   }, []);
   return (
     <div>
+      <GoT />
       <h1>HedgeNight</h1>
       <h3>Dashboard</h3>
       {/* <p>{data && data.message}</p> */}
       <Timer />
+      
     </div>
   );
 }
