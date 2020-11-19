@@ -22,7 +22,7 @@ const schema = Schema({
   //will be an array of IDs 
   tasks: [{
     type: Types.ObjectId, //Schema.Types.ObjectId 
-    ref:"Tasks",
+    ref: "Task",
   }]
 });
 
