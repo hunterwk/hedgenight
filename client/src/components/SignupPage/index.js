@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useAuth } from "../util/authContext";
+import { useAuth } from "../../util/authContext";
 
 const styles = {
   wrapper: {

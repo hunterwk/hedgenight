@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "../util/authContext";
-import API from "../util/API";
+import { useAuth } from "../../util/authContext";
+import API from "../../util/API";
 
 function ProtectedExamplePage() {
   const { logout, user } = useAuth();
