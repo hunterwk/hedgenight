@@ -33,6 +33,15 @@ function Navbar() {
           Signup
         </NavLink>
       )}
+      {isLoggedIn || (
+        <NavLink
+          className="nav-link"
+          to="/history"
+          activeClassName="nav-link-active"
+        >
+          Past Entries
+        </NavLink>
+      )}
       {isLoggedIn && (
         <NavLink
           className="nav-link"
