@@ -12,8 +12,9 @@
   background-color: #555;
 }
 
+/* text color */
 .nav-link:visited {
-  color: #aaa;
+  color: rgb(255, 255, 255);
 }
 
 .nav-link-active {

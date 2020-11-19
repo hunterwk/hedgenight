@@ -45,7 +45,7 @@ function Navbar() {
       {isLoggedIn && (
         <NavLink
           className="nav-link"
-          to="/protected/example"
+          // to="/protected/example"
           activeClassName="nav-link-active"
         >
           Protected
