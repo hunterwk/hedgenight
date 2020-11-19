@@ -1,5 +1,5 @@
 import { Route, Redirect } from "react-router-dom";
-import { useAuth } from "../util/authContext";
+import { useAuth } from "../../util/authContext";
 
 // Use this to create a route when only a logged in user should be able to
 // navigate to the route.
