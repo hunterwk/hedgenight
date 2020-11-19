@@ -16,7 +16,7 @@ const Timer = () => {
 
   //will be the save to database functionality
   function save() {
-
+    
   }
 
   useEffect(() => {
