@@ -1,7 +1,6 @@
 //const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const {Schema, Types, model} = require("mongoose")
-const Tasks = require("./tasks");
 const SALT_ROUNDS = 10;
 
 const schema = Schema({
@@ -23,7 +22,7 @@ const schema = Schema({
   //will be an array of IDs 
   tasks: [{
     type: Types.ObjectId, //Schema.Types.ObjectId 
-    ref:"Tasks",
+    ref: "Task",
   }]
 });
 
