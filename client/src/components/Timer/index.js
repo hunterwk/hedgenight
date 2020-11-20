@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-import './GoTblock/node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 //using this package will allow us to store the seconds state as a number when it is added to the database for easier usage later
 const TimeFormat = require('hh-mm-ss')
@@ -35,9 +34,6 @@ const Timer = () => {
 
 
   return (
-    // <div className="header">
-    //   <h1>Weclome Back {data.username}</h1>
-    // </div>
     <div className="container mx-auto col-6 col-s-9">
       <div className="app">
         <div className="time">
@@ -64,9 +60,6 @@ const Timer = () => {
             </div>
           </form>
         </div>
-      </div>
-      <div class="footer">
-        <p>HedgeNight™</p>
       </div>
     </div>
   );

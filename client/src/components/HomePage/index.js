@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import API from "../../util/API";
 import GoT from "../GoTblock";
-import Timer from "../Dashboard/timer.js";
-import notes from "../Dashboard/notes.js";
-import footer from "/Dashboard/footer.js";
+import Timer from "../Timer";
+
 
 function HomePage() {
   const [data, setData] = useState(null);
