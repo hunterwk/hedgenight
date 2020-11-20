@@ -16,7 +16,16 @@ const deleteTask = (req, res) => {
 }
 
 const createTask = (req, res) => {
-    res.end()
+    db.User.findById(req.user.id)
+    .then((user)=>{
+        return user.addTask(req.body)
+    })
+    .then((task)=>{
+        res.json(task)
+    })
+    .catch(err => {
+      res.json(err);
+    });
 }
 
 module.exports = { findAllTasks, deleteTask, createTask }

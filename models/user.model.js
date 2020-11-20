@@ -2,6 +2,7 @@
 const bcrypt = require("bcrypt");
 const {Schema, Types, model} = require("mongoose")
 const SALT_ROUNDS = 10;
+const Task =require("./task.model")
 
 const schema = Schema({
   username: {
@@ -38,5 +39,13 @@ schema.pre("save", function () {
 schema.methods.comparePassword = function compareUserPassword(candidate) {
   return bcrypt.compare(candidate, this.password);
 };
+
+schema.methods.addTask = async function addTaskToUser(taskData) {
+  const task = await Task.create(taskData)
+  this.tasks.push(task)
+  await this.save()
+  return task
+};
+
 const User = model("User", schema);
 module.exports = User;
