@@ -38,7 +38,7 @@ const Timer = () => {
     // <div className="header">
     //   <h1>Weclome Back {data.username}</h1>
     // </div>
-    <div className="container mx-auto">
+    <div className="container mx-auto col-6 col-s-9">
       <div className="app">
         <div className="time">
           <span className="timer-span">{TimeFormat.fromS(seconds, 'hh:mm:ss')}</span>
@@ -47,20 +47,6 @@ const Timer = () => {
           <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
             {isActive ? 'Pause' : 'Start Timer'}
           </button>
-
-
-        </div>
-        <div className="row">
-          <form method="post">
-            <label for="name">Session Title:</label><br />
-            <input type="text"></input><br />
-            <label for="notes">Session Notes:</label><br />
-            <input type="text"></input><br />
-            <button className={`button button-secondary`} onClick={save}>
-              Save
-        </button>
-          </form><br />
-
         </div>
       </div>
     </div>
