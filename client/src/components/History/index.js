@@ -1,12 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { BrowserRouter as Router, useHistory } from "react-router-dom";
 import "./App.css";
 
 function History() {
     const history = useHistory();
     const handleHistory = () => {
-        history.push("./components/HomePage")
+        history.push("/homepage")
     }
+
+    useEffect(() => { 
+        history.push("/homepage")
+    }
+    , [])
 
     return (
         <Router>
@@ -16,7 +21,6 @@ function History() {
                 <div className="back2homepage">
                     <button onClick={handleHistory}>Return to homepage</button>
                 </div>
-
             </div>
         </Router>
     );
