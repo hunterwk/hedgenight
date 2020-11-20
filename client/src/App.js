@@ -7,10 +7,10 @@ import Navbar from "./components/Navbar";
 import ProtectedExamplePage from "./components/ProtectedExamplePage";
 import { ProvideAuth } from "./util/authContext";
 import ProtectedRoute from "./components/ProtectedRoute";
-import notes from "./components/Dashboard/notes.js";
-import timer from "./components/Dashboard/timer.js";
-import quotes from "./components/Dashboard/quotes.js";
-import history from "./components/History/index.js";
+import Notes from "./components/Dashboard/notes.js";
+import Timer from "./components/Dashboard/timer.js";
+import Quotes from "./components/Dashboard/quotes.js";
+import History from "./components/History/index.js";
 
 
 function App() {

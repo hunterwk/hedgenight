@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import API from "../../util/API";
 import GoT from "../GoTblock";
 import Timer from "../Dashboard/timer.js";
-import notes from "../Dashboard/notemodal.js";
+import notes from "../Dashboard/notes.js";
 import footer from "/Dashboard/footer.js";
 
 function HomePage() {
@@ -19,8 +19,6 @@ function HomePage() {
       <h3>Dashboard</h3>
       {/* <p>{data && data.message}</p> */}
       <Timer />
-      <notes />
-      <footer />
       
     </div>
   );
