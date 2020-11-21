@@ -2,16 +2,16 @@ import React, {useEffect} from "react";
 import { BrowserRouter as Router, useHistory } from "react-router-dom";
 import "./App.css";
 
+function DataCard(entryID) {
+    const prevEntry = 
+}
+
 function History() {
     const history = useHistory();
-    const handleHistory = () => {
-        history.push("/homepage")
-    }
 
-    useEffect(() => { 
-        history.push("/homepage")
-    }
-    , [])
+    useEffect(() => {
+        history.push("/");
+    }, []);
 
     return (
         <Router>
@@ -19,7 +19,7 @@ function History() {
                 <header>History</header>
                 <br />
                 <div className="back2homepage">
-                    <button onClick={handleHistory}>Return to homepage</button>
+                    <button>Return to homepage</button>
                 </div>
             </div>
         </Router>
