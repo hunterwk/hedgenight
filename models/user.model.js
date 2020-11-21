@@ -1,8 +1,9 @@
 //const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const {Schema, Types, model} = require("mongoose")
+const mongoose = require("mongoose")
+const {Schema, Types, model} = mongoose
 const SALT_ROUNDS = 10;
-const Task =require("./task.model")
+
 
 const schema = Schema({
   username: {
@@ -41,7 +42,7 @@ schema.methods.comparePassword = function compareUserPassword(candidate) {
 };
 
 schema.methods.addTask = async function addTaskToUser(taskData) {
-  const task = await Task.create(taskData)
+  const task = await mongoose.model("Task").create(taskData)
   this.tasks.push(task)
   await this.save()
   return task
