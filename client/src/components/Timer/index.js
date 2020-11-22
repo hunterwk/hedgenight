@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from "react";
+import { isLoggedIn } from "../../util/auth";
 import "./styles.css";
 import API from "../../util/API";
 
@@ -15,7 +16,15 @@ const Timer = () => {
     notes: "",
     duration: seconds
   })
+  
+  function displaySave() {
+    if (!isLoggedIn) {
 
+    } else {
+
+    }
+
+  }
   
   //essentially creates a start and pause button instead of making 2 buttons
   function toggle() {
@@ -78,7 +87,7 @@ const Timer = () => {
             value={title}
             onChange={(evt) => setTitle(evt.target.value)}></input>
             <br />
-            <label for="notes">Session Notes:</label>
+            <label htmlFor="notes">Session Notes:</label>
             <br />
             <textarea
               value={notes}
@@ -86,9 +95,11 @@ const Timer = () => {
               onChange={(evt) => setNotes(evt.target.value)}
             ></textarea>
             <br />
+            
             <button
               className={`button button-secondary`}
-              onClick={handleSaveTask}
+              onClick={(evt) => handleSaveTask}
+              
             >
               Save
             </button>

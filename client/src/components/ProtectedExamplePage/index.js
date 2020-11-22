@@ -15,14 +15,14 @@ function ProtectedExamplePage() {
     });
   }, []);
 
-  const dataPrint = () => {
-    if (data.length === 0) {
-      return <h3 className="text-center">WELCOME NEWCOMER</h3>
-    } else {
-        // return {data.map((tasks)=> (<p key={tasks}>{tasks.name}<br/>{tasks.duration}<br/>{tasks.notes}<br/></p>)}
-     return "data here"
-    }
-  };
+  // const dataPrint = () => {
+  //   if (data.length === 0) {
+  //     return <h3 className="text-center">WELCOME NEWCOMER</h3>
+  //   } else {
+  //       // return {data.map((tasks)=> (<p key={tasks}>{tasks.name}<br/>{tasks.duration}<br/>{tasks.notes}<br/></p>)}
+  //    return "data here"
+  //   }
+  // };
 
   return (
     <div>
@@ -30,7 +30,7 @@ function ProtectedExamplePage() {
       <p>user id: {user.id}</p>
       <p>username: {user.username}</p>
       <h3>Protected API Data Example</h3>
-      {dataPrint()}
+      {/* {dataPrint()} */}
     </div>
   );
 }
