@@ -7,9 +7,10 @@ function ProtectedExamplePage() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    // example API call
-    API.getProtectedExample().then((response) => {
-      setData(response.data);
+    // fetch(API.findTasks).then(response => response.json).then(data => setData)
+    API.findTasks().then(({data}) => {
+      setData(data);
+      console.log(data)
     });
   }, []);
 
@@ -19,6 +20,7 @@ function ProtectedExamplePage() {
       <p>user id: {user.id}</p>
       <p>username: {user.username}</p>
       <h3>Protected API Data Example</h3>
+      
       {data && <pre>{JSON.stringify(data)}</pre>}
     </div>
   );
