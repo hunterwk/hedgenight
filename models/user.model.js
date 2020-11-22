@@ -5,6 +5,7 @@ const {Schema, Types, model} = mongoose
 const SALT_ROUNDS = 10;
 
 
+
 const schema = Schema({
   username: {
     type: String,
@@ -17,13 +18,10 @@ const schema = Schema({
     type: String,
     required: true,
   },
-  // tasks: [Tasks],
-
-
   //referencing tasks schema and dividing it up by object ID
   //will be an array of IDs 
   tasks: [{
-    type: Types.ObjectId, //Schema.Types.ObjectId 
+    type: Schema.Types.ObjectId, //Schema.Types.ObjectId 
     ref: "Task",
   }]
 });
