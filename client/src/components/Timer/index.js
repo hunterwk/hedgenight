@@ -22,10 +22,19 @@ const Timer = () => {
   function toggle() {
     setIsActive(!isActive);
   }
+  function helper() {
+    if (isActive === true){
+      setIsActive(false)
+    } else if (isActive === false) {
+      return;
+    }
+  }
+
 
   //will be the save to database functionality
   function handleSaveTask(evt) {
     evt.preventDefault();
+    helper()
     try {
       setTask({name: title,
       notes: notes,

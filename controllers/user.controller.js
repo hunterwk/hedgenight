@@ -15,7 +15,6 @@ const deleteTask = (req, res) => {
     res.end()
 }
 
-// WTF DOES THIS DO
 const createTask = (req, res) => {
     console.log(req.body)
     db.User.findById(req.user.id)
