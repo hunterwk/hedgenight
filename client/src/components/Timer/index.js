@@ -26,7 +26,7 @@ const Timer = () => {
   function handleSaveTask(evt) {
     evt.preventDefault();
     try {
-      setTask({title: title,
+      setTask({name: title,
       notes: notes,
       duration: seconds})
       API.createTasks(task)
