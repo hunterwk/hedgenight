@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { isLoggedIn } from "../../util/auth";
+import { useAuth } from "../../util/authContext";
 import "./styles.css";
 import API from "../../util/API";
 
@@ -7,6 +7,7 @@ import API from "../../util/API";
 const TimeFormat = require("hh-mm-ss");
 
 const Timer = () => {
+  const { isLoggedIn } = useAuth();
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [notes, setNotes] = useState("");
@@ -16,15 +17,6 @@ const Timer = () => {
     notes: "",
     duration: seconds
   })
-  
-  function displaySave() {
-    if (!isLoggedIn) {
-
-    } else {
-
-    }
-
-  }
   
   //essentially creates a start and pause button instead of making 2 buttons
   function toggle() {
@@ -95,17 +87,16 @@ const Timer = () => {
               onChange={(evt) => setNotes(evt.target.value)}
             ></textarea>
             <br />
-            
-            <button
-              className={`button button-secondary`}
-              onClick={(evt) => handleSaveTask}
-              
-            >
-              Save
-            </button>
-            <p className="text-muted">
-              Log in or create an account if you would like to save a session.
-            </p>
+            {isLoggedIn ? (
+                  <button className={`button button-secondary`} onClick={handleSaveTask}>
+                    Save
+                  </button>
+                ) : (
+                  <p className="text-muted">
+                    Log in or create an account if you would like to save a
+                    session.
+                  </p>
+                )}
             <br />
           </form>
         </div>
