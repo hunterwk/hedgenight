@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../util/authContext";
-import "./styles.css";
+import "../HomePage/styles.css";
 import API from "../../util/API";
 
 //using this package will allow us to store the seconds state as a number when it is added to the database for easier usage later

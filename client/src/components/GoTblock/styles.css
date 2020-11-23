@@ -1,13 +1,16 @@
 .quote {
     font-size: medium;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-style: italic;
+    font-weight: bolder;
+    font-size-adjust: initial;
 }
 .author {
     font-size: smaller;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    font-size-adjust: inherit;
 }
 #GOT{
-    border: 5px solid black;
+    border: 5rem;
 }
