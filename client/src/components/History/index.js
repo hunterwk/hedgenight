@@ -1,48 +1,36 @@
-import React, { Component } from 'react'
+import { useEffect, useState } from "react";
+import { useAuth } from "../../util/authContext";
+import API from "../../util/API";
 
-export default class History extends Component {
-    render() {
-        return (
-            <div>
-                <section id="colorlib-hero" className="js-fullheight" data-section="home">
-                    <div className="flexslider js-fullheight">
-                        <ul className="slides">
-                            <li style={{ backgroundImage: 'url(../logo/hedgenightlogo.png)' }}>
-                                <div className="overlay" />
-                                <div className="container-fluid">
-                                    <div className="row">
-                                        <div className="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-                                            <div className="slider-text-inner js-fullheight">
-                                                <div className="desc">
-                                                    <h1>Hi! <br />I'm Jackson</h1>
-                                                    <h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>
-                                                    <p><a className="btn btn-primary btn-learn">Download CV <em className="icon-download4" /></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style={{ backgroundImage: 'url(images/img_bg_2.jpg)' }}>
-                                <div className="overlay" />
-                                <div className="container-fluid">
-                                    <div className="row">
-                                        <div className="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-                                            <div className="slider-text-inner">
-                                                <div className="desc">
-                                                    <h1>I am <br />a Designer</h1>
-                                                    <h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>
-                                                    <p><a className="btn btn-primary btn-learn">View Portfolio <em className="icon-briefcase3" /></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
-        )
-    }
-};
+function ProtectedExamplePage() {
+    const { logout, user } = useAuth();
+    const [data, setData] = useState([]);
+
+
+    useEffect(() => {
+        API.findTasks().then(({ data }) => {
+            setData(data);
+            console.log(data);
+        });
+    }, []);
+
+
+
+
+    return (
+        <div>
+            <h1>History Card</h1>
+            <p>{user.tasks.id}</p>
+            <p>{user.tasks.notes}</p>
+            <p>{user.tasks.duration}</p>
+            <h3>Protected API Data Example</h3>
+            {data.length === 0
+                ? <h3 className="text-center">WELCOME NEWCOMER</h3>
+                : data.map((tasks) => (
+                    <p key={tasks._id.toString()} onClick={() => API.loadTasks(tasks._id.toString())}>{tasks.name}<br />{tasks.duration}<br />{tasks.notes}<br /></p>))}
+        </div>
+    );
+}
+
+export default ProtectedExamplePage;
+// {data && <pre>{JSON.stringify(data)}</pre>}
