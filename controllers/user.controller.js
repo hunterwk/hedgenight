@@ -31,6 +31,9 @@ const createTask = (req, res) => {
 
 const continueTask = (req, res) => {
     console.log(req.params.id)
+    db.User.findById(req.task._id)
+    // findbyId from dbUser 
+    // pass info to front end timer
 }
 
 module.exports = { findAllTasks, deleteTask, createTask, continueTask }
