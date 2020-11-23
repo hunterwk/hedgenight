@@ -1,7 +1,7 @@
 {
-  "name": "mern-jwt",
+  "name": "hedgenight",
   "version": "1.0.0",
-  "description": "## About This Boilerplate",
+  "description": "Hedgenight timer app",
   "main": "server.js",
   "private": true,
   "engines": {

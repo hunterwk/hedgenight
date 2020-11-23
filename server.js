@@ -10,7 +10,7 @@ const { handleErrors } = require("./middleware/error.middleware");
 
 
 if (!process.env.SERVER_SECRET) {
-  // SERVER_SECRET env var is required for auth
+
   throw new Error("SERVER_SECRET is not set.");
 }
 
