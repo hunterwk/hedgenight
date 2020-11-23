@@ -42,10 +42,10 @@ function Navbar() {
           Protected
         </NavLink>
       )}
-      {isLoggedIn || (
+      {isLoggedIn && (
         <NavLink
           className="nav-link"
-          to="/history"
+          to="/protected/history"
           activeClassName="nav-link-active"
         >
           History
