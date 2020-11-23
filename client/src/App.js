@@ -11,14 +11,19 @@ import { ProvideAuth } from "./util/authContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Logo from "./components/Logo/hedgenightlogo.png"
 import GoT from "./components/GoTblock";
+import Footer from "./components/Footer";
 
 
 function App() {
   return (
     <ProvideAuth>
       <Router>
-      <img src={Logo} alt="hedgenight" />
-        <GoT />
+      <div className="row align-items-center"> 
+      <div className="col-8 float-left">
+      <img src={Logo} alt="hedgenight" /></div>
+      <div className="col-4 float-right">
+        <GoT /></div>
+        </div> 
         <Navbar />
         <Switch>
           <Route exact path="/">
@@ -37,7 +42,7 @@ function App() {
             <HistoryCard />
           </ProtectedRoute>
         </Switch>
-      </Router>
+      </Router><Footer /> 
     </ProvideAuth>
   );
 }
