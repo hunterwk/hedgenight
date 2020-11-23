@@ -16,8 +16,7 @@ function HomePage() {
 
     <div>
       <h1>HedgeNight</h1>
-      <h3>Dashboard</h3>
-      <section className="row justify-content">
+      <section className="row justify-content-around">
         <Timer />
         <AboutUs />
       </section>
