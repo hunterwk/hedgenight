@@ -42,6 +42,15 @@ function Navbar() {
           Protected
         </NavLink>
       )}
+      {isLoggedIn || (
+        <NavLink
+          className="nav-link"
+          to="/history"
+          activeClassName="nav-link-active"
+        >
+          History
+        </NavLink>
+      )}
       {isLoggedIn && <button onClick={logout}>Logout</button>}
     </nav>
   );
