@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth } from "../../util/authContext";
 import "./styles.css";
 import API from "../../util/API";
@@ -12,37 +12,30 @@ const Timer = () => {
   const [isActive, setIsActive] = useState(false);
   const [notes, setNotes] = useState("");
   const [title, setTitle] = useState("");
-  const [task, setTask] = useState({
-    title: "",
-    notes: "",
-    duration: seconds
-  })
-  
+
   //essentially creates a start and pause button instead of making 2 buttons
   function toggle() {
     setIsActive(!isActive);
   }
   function helper() {
-    if (isActive === true){
-      setIsActive(false)
+    if (isActive === true) {
+      setIsActive(false);
     } else if (isActive === false) {
       return;
     }
   }
 
-
   //will be the save to database functionality
-  function handleSaveTask(evt) {
+  async function handleSaveTask(evt) {
     evt.preventDefault();
-    helper()
+    helper();
     try {
-      setTask({name: title,
-      notes: notes,
-      duration: seconds})
-      API.createTasks(task)
-      console.log(task)
+      API.createTasks({ name: title, notes: notes, duration: seconds });
+      console.log({name: title,
+        notes: notes,
+        duration: seconds});
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
@@ -81,12 +74,13 @@ const Timer = () => {
       <div className="container mx-auto">
         <div className="row">
           <form>
-            <label for="name header">Session Title:</label>
+            <label htmlFor="name header">Session Title:</label>
             <br />
-            <input 
-            type="text"
-            value={title}
-            onChange={(evt) => setTitle(evt.target.value)}></input>
+            <input
+              type="text"
+              value={title}
+              onChange={(evt) => setTitle(evt.target.value)}
+            ></input>
             <br />
             <label htmlFor="notes">Session Notes:</label>
             <br />
@@ -97,15 +91,17 @@ const Timer = () => {
             ></textarea>
             <br />
             {isLoggedIn ? (
-                  <button className={`button button-secondary`} onClick={handleSaveTask}>
-                    Save
-                  </button>
-                ) : (
-                  <p className="text-muted">
-                    Log in or create an account if you would like to save a
-                    session.
-                  </p>
-                )}
+              <button
+                className={`button button-secondary`}
+                onClick={handleSaveTask}
+              >
+                Save
+              </button>
+            ) : (
+              <p className="text-muted">
+                Log in or create an account if you would like to save a session.
+              </p>
+            )}
             <br />
           </form>
         </div>
