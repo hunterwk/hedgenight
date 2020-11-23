@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import API from "../../util/API";
 import Timer from "../Timer";
+import AboutUs from "../AboutUs";
 import "./styles.css";
 
 
@@ -12,8 +13,9 @@ function HomePage() {
     });
   }, []);
   return (
-    <div className="container mx-auto">
       <Timer />
+
+      <AboutUs />
       
     </div>
   );
