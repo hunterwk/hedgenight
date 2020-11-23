@@ -10,7 +10,7 @@ const { handleErrors } = require("./middleware/error.middleware");
 
 
 if (!process.env.SERVER_SECRET) {
-  // SERVER_SECRET env var is required for auth
+
   throw new Error("SERVER_SECRET is not set.");
 }
 
@@ -27,6 +27,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, "client/build")));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // routing
 app.post("/api/auth/login", authController.login);
