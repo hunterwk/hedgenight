@@ -55,19 +55,18 @@ const Timer = () => {
   }, [isActive, seconds]);
 
   return (
-    <div className="container mx-auto col-6 col-s-9">
+    <div id="timer-card" className="card">
+       <div className="container mx-auto col-6 col-s-9">
       <div className="app">
         <aside>
           <div className="time">
             <h1>
-              <span className="timer-span">
+              <span className="timer-span mx-auto">
                 {TimeFormat.fromS(seconds, "hh:mm:ss")}
               </span>
             </h1>
-            <br />
           </div>
         </aside>
-        <div className="row">
           <br />
           <button
             className={`button button-primary button-primary-${
@@ -78,10 +77,8 @@ const Timer = () => {
             {isActive ? "Pause" : "Start Timer"}
           </button>
           <br />
-        </div>
       </div>
       <div className="container mx-auto">
-        <div className="row">
           <form>
             <section>
               <section className="sessionTitle">
@@ -121,9 +118,11 @@ const Timer = () => {
               <br />
             </section>
           </form>
-        </div>
       </div>
     </div>
+    </div>
+
+   
   );
 };
 
