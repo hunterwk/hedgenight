@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../util/authContext";
 import API from "../../util/API";
-import './styles.css';
+import '../HomePage/styles.css';
 import { Card } from "react-bootstrap";
 
 function HistoryPage() {
@@ -21,7 +21,7 @@ function HistoryPage() {
 
     return (
         <div className="HistoryCard">
-            <div className= "CardGroup">
+            <div className="CardGroup">
                 <Card>
                     <Card.Img variant="top" src="holder.js/100px160" />
                     <Card.Body>
@@ -65,7 +65,7 @@ function HistoryPage() {
                     <p key={tasks._id.toString()} onClick={() => API.loadTasks(tasks._id.toString())}>{tasks.name}<br />{tasks.duration}<br />{tasks.notes}<br /></p>))}
         </div>
     );
-                }
-                
-    export default HistoryPage;
+}
+
+export default HistoryPage;
 

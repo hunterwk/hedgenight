@@ -12,12 +12,8 @@ function HomePage() {
     });
   }, []);
   return (
-    <div>
-      <h1>HedgeNight</h1>
-      <h3>Dashboard</h3>
-      {/* <p>{data && data.message}</p> */}
+    <div className="timer">
       <Timer />
-      
     </div>
   );
 }

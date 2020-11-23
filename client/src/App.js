@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import "./App.css";
 import "./components/HomePage/styles.css";
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
@@ -17,7 +16,7 @@ function App() {
   return (
     <ProvideAuth>
       <Router>
-      <img src={Logo} alt="hedgenight" />
+        <img src={Logo} alt="hedgenight" />
         <GoT />
         <Navbar />
         <Switch>
