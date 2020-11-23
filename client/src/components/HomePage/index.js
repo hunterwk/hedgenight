@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import API from "../../util/API";
-import Timer from "../Timer";
 import "./styles.css";
+import Timer from "../Timer";
+import AboutUs from "../AboutUs";
 
 
 function HomePage() {
@@ -14,6 +15,7 @@ function HomePage() {
   return (
     <div className="timer">
       <Timer />
+      <AboutUs />
     </div>
   );
 }
