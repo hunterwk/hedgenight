@@ -1,9 +1,25 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../util/authContext";
 import API from "../../util/API";
+import '../HomePage/styles.css';
+
+function HistoryPage() {
+    const { logout, user } = useAuth();
+    const [data, setData] = useState([]);
+
+
+    useEffect(() => {
+        API.findTasks().then(({ data }) => {
+            setData(data);
+            console.log(data);
+        });
+    }, []);
+
 import "./styles.css";
 
 const TimeFormat = require("hh-mm-ss");
+
+
 
 function HistoryPage() {
   const { logout, user } = useAuth();
