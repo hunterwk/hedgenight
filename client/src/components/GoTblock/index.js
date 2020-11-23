@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './styles.css';
+import '../../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const GoT = () => {

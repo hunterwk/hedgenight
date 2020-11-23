@@ -1,10 +1,27 @@
-img {
-    height: 300px;
+div {
+  /* font-family: "Lucida Sans", sans-serif; */
+  font-family: 'IM Fell English', serif;
+  object-position: center;
 }
 
-/* div { */
-    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif */
-/* }; */
+img {
+    max-height: inherit;
+}
+
+.wrapper {
+    margin-top: "2rem",
+}
+
+
+.form {
+    display: "flex";
+    flex-direction: column;
+    max-width: "12em"
+}
+
+.submitButton {
+    margin-top: "1em";
+}
 
 * {
   box-sizing: border-box;
@@ -19,11 +36,6 @@ img {
 [class*="col-"] {
   float: left;
   padding: 15px;
-}
-
-div {
-  /* font-family: "Lucida Sans", sans-serif; */
-  font-family: 'IM Fell English', serif;
 }
 
 .header {
@@ -110,9 +122,9 @@ div {
     font-family: 'IM Fell English', serif;
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 .row::after {
   content: "";
@@ -130,6 +142,8 @@ div {
   color: #ffffff;
   padding: 15px;
 }
+
+
 
 .menu ul {
   list-style-type: none;
@@ -149,22 +163,22 @@ div {
   background-color: #0099cc;
 }
 
-.aside {
+/* .aside {
   background-color: #33b5e5;
   padding: 15px;
   color: #ffffff;
   text-align: center;
   font-size: 14px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
+} */
 
-.footer {
+/* .footer {
   background-color: #0099cc;
   color: #ffffff;
   text-align: center;
   font-size: 12px;
   padding: 15px;
-}
+} */
 
 /* For mobile phones: */
 [class*="col-"] {
@@ -201,3 +215,4 @@ div {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 }
+

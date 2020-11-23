@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../util/authContext";
+import "../HomePage/styles.css"
 
-const styles = {
-  wrapper: {
-    marginTop: "2rem",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    maxWidth: "12em",
-  },
-  submitButton: {
-    marginTop: "1em",
-  },
-};
+
+// const styles = {
+//   wrapper: {
+//     marginTop: "2rem",
+//   },
+//   form: {
+//     display: "flex",
+//     flexDirection: "column",
+//     maxWidth: "12em",
+//   },
+//   submitButton: {
+//     marginTop: "1em",
+//   }
+// };
 
 function SignupPage() {
   const { signup } = useAuth();
@@ -48,10 +50,10 @@ function SignupPage() {
     }
   };
   return (
-    <div style={styles.wrapper}>
+    <div>
       <h1>Signup</h1>
       <div>{isPending && "Loading..."}</div>
-      <form style={styles.form} onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -69,7 +71,7 @@ function SignupPage() {
           value={formState.password}
           onChange={handleInputChange}
         />
-        <button type="submit" style={styles.submitButton}>
+        <button type="submit">
           Submit
         </button>
       </form>

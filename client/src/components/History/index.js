@@ -4,8 +4,8 @@ import API from "../../util/API";
 import './styles.css';
 import { Card } from "react-bootstrap";
 
-function ProtectedExamplePage() {
-    const { logout, user } = useAuth();
+function HistoryPage() {
+    const { user } = useAuth();
     const [data, setData] = useState([]);
 
 
@@ -66,5 +66,5 @@ function ProtectedExamplePage() {
         </div>
     );
 
-    export default ProtectedExamplePage;
+    export default HistoryPage;
 // {data && <pre>{JSON.stringify(data)}</pre>}
