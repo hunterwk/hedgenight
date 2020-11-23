@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import './styles.css';
+import '../HomePage/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const GoT = () => {
@@ -20,7 +21,7 @@ const GoT = () => {
 
     const [namedOne, setName] = useState("")
     useEffect(() => {
-            if (quoteText.name === "null") {
+            if (quoteText.house === "null") {
                 setName(quoteText.name)
             } else {
                 setName(quoteText.name + " of " + quoteText.house)

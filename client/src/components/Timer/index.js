@@ -31,9 +31,11 @@ const Timer = () => {
     helper();
     try {
       API.createTasks({ name: title, notes: notes, duration: seconds });
-      console.log({name: title,
+      console.log({
+        name: title,
         notes: notes,
-        duration: seconds});
+        duration: seconds
+      });
     } catch (error) {
       console.log(error);
     }
@@ -55,54 +57,69 @@ const Timer = () => {
   return (
     <div className="container mx-auto col-6 col-s-9">
       <div className="app">
-        <div className="time">
-          <span className="timer-span">
-            {TimeFormat.fromS(seconds, "hh:mm:ss")}
-          </span>
-        </div>
+        <aside>
+          <div className="time">
+            <h1>
+              <span className="timer-span">
+                {TimeFormat.fromS(seconds, "hh:mm:ss")}
+              </span>
+            </h1>
+            <br />
+          </div>
+        </aside>
         <div className="row">
+          <br />
           <button
             className={`button button-primary button-primary-${
               isActive ? "active" : "inactive"
-            }`}
+              }`}
             onClick={toggle}
           >
             {isActive ? "Pause" : "Start Timer"}
           </button>
+          <br />
         </div>
       </div>
       <div className="container mx-auto">
         <div className="row">
           <form>
-            <label htmlFor="name header">Session Title:</label>
-            <br />
-            <input
-              type="text"
-              value={title}
-              onChange={(evt) => setTitle(evt.target.value)}
-            ></input>
-            <br />
-            <label htmlFor="notes">Session Notes:</label>
-            <br />
-            <textarea
-              value={notes}
-              type="text"
-              onChange={(evt) => setNotes(evt.target.value)}
-            ></textarea>
-            <br />
-            {isLoggedIn ? (
-              <button
-                className={`button button-secondary`}
-                onClick={handleSaveTask}
-              >
-                Save
-              </button>
-            ) : (
-              <p className="text-muted">
-                Log in or create an account if you would like to save a session.
-              </p>
-            )}
-            <br />
+            <section>
+              <section className="sessionTitle">
+                <label htmlFor="name header">Session Title:</label>
+                <br />
+                <input
+                  type="text"
+                  value={title}
+                  onChange={(evt) => setTitle(evt.target.value)}
+                ></input>
+              </section>
+              <article className="sessionNotes">
+                <br />
+                <label htmlFor="notes">Session Notes:</label>
+                <br />
+                <textarea
+                  value={notes}
+                  type="text"
+                  onChange={(evt) => setNotes(evt.target.value)}
+                ></textarea>
+                <br />
+              </article>
+              <article className="saveTimeBtn">
+                {isLoggedIn ? (
+                  <button
+                    className={`button button-secondary`}
+                    onClick={handleSaveTask}
+                  >
+                    Save
+                  </button>
+                ) : (
+                    <p className="text-muted">
+                      Log in or create an account if you would like to save a session.
+                    </p>
+                  )}
+              </article>
+              <br />
+            </section>
           </form>
         </div>
       </div>

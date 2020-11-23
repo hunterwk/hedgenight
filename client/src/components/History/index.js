@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../util/authContext";
 import API from "../../util/API";
+import '../HomePage/styles.css';
 import "./styles.css";
 
 const TimeFormat = require("hh-mm-ss");
+
+
 
 function HistoryPage() {
   const { logout, user } = useAuth();
