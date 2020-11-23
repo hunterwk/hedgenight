@@ -29,4 +29,8 @@ const createTask = (req, res) => {
     });
 }
 
-module.exports = { findAllTasks, deleteTask, createTask }
+const continueTask = (req, res) => {
+    console.log(req.params.id)
+}
+
+module.exports = { findAllTasks, deleteTask, createTask, continueTask }

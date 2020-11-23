@@ -9,8 +9,8 @@ const findTasks = () => axios.get("/api/users/tasks");
 const createTasks = (tasks) => {
    axios.post("/api/users/tasks", tasks); 
 } 
+const loadTasks = (id) => {axios.post("/api/users/tasks/" +id)}
 
-
-const API = { getProtectedExample, getPublicExample, createTasks, findTasks };
+const API = { getProtectedExample, getPublicExample, createTasks, findTasks, loadTasks };
 
 export default API;
