@@ -21,7 +21,7 @@ const GoT = () => {
 
     const [namedOne, setName] = useState("")
     useEffect(() => {
-            if (quoteText.name === "null") {
+            if (quoteText.house === "null") {
                 setName(quoteText.name)
             } else {
                 setName(quoteText.name + " of " + quoteText.house)
