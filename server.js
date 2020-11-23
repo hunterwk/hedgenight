@@ -45,6 +45,7 @@ app.get("/api/protected", hasValidToken, (req, res) => {
 app.get("/api/users/tasks", hasValidToken, userController.findAllTasks);
 app.post("/api/users/tasks", hasValidToken, userController.createTask);
 app.delete("/api/users/tasks/:id", hasValidToken, userController.deleteTask);
+app.post("/api/users/tasks/:id", hasValidToken, userController.continueTask);
 
 app.use(handleErrors);
 
