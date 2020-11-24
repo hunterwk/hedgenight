@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../../util/authContext";
 
 import "../HomePage/styles.css";
-import "./Navbar.css";
 
 function Navbar() {
   const { isLoggedIn, logout } = useAuth();
@@ -34,15 +33,7 @@ function Navbar() {
           Signup
         </NavLink>
       )}
-      {isLoggedIn && (
-        <NavLink
-          className="nav-link"
-          to="/protected/example"
-          activeClassName="nav-link-active"
-        >
-          Protected
-        </NavLink>
-      )}
+     
       {isLoggedIn && (
         <NavLink
           className="nav-link"

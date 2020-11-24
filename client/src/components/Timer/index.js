@@ -6,12 +6,12 @@ import API from "../../util/API";
 //using this package will allow us to store the seconds state as a number when it is added to the database for easier usage later
 const TimeFormat = require("hh-mm-ss");
 
-const Timer = () => {
+const Timer = (props) => {
   const { isLoggedIn } = useAuth();
-  const [seconds, setSeconds] = useState(0);
+  const [seconds, setSeconds] = useState(props.useTimer.duration);
   const [isActive, setIsActive] = useState(false);
-  const [notes, setNotes] = useState("");
-  const [title, setTitle] = useState("");
+  const [notes, setNotes] = useState(props.useTimer.notes);
+  const [title, setTitle] = useState(props.useTimer.name);
 
   //essentially creates a start and pause button instead of making 2 buttons
   function toggle() {
@@ -30,11 +30,13 @@ const Timer = () => {
     evt.preventDefault();
     helper();
     try {
-      API.createTasks({ name: title, notes: notes, duration: seconds });
+      props.useTimer._id.toString()
+        ? API.updateTasks({ name: title, notes: notes, duration: seconds })
+        : API.createTasks({ name: title, notes: notes, duration: seconds });
       console.log({
         name: title,
         notes: notes,
-        duration: seconds
+        duration: seconds,
       });
     } catch (error) {
       console.log(error);
@@ -56,29 +58,31 @@ const Timer = () => {
 
   return (
     <div id="timer-card" className="card">
-       <div className="container mx-auto col-6 col-s-9">
-      <div className="app">
-        <aside>
-          <div className="time">
-            <h1>
-              <span className="timer-span mx-auto">
-                {TimeFormat.fromS(seconds, "hh:mm:ss")}
-              </span>
-            </h1>
+      <div className="container mx-auto col-6 col-s-9">
+        <div className="app">
+          <aside>
+            <div className="time">
+              <h1>
+                <span className="timer-span mx-auto">
+                  {TimeFormat.fromS(seconds, "hh:mm:ss")}
+                </span>
+              </h1>
+            </div>
+          </aside>
+          <br />
+          <div className='startTimeBtn'>
+            <button
+              className={`button button-primary button-primary-${
+                isActive ? "active" : "inactive"
+                }`}
+              onClick={toggle}
+            >
+              {isActive ? "Pause" : "Start Timer"}
+            </button>
+            <br />
           </div>
-        </aside>
-          <br />
-          <button
-            className={`button button-primary button-primary-${
-              isActive ? "active" : "inactive"
-              }`}
-            onClick={toggle}
-          >
-            {isActive ? "Pause" : "Start Timer"}
-          </button>
-          <br />
-      </div>
-      <div className="container mx-auto">
+        </div>
+        <div className="container mx-auto">
           <form>
             <section>
               <section className="sessionTitle">
@@ -97,6 +101,8 @@ const Timer = () => {
                 <textarea
                   value={notes}
                   type="text"
+                  rows="6"
+                  width="100%"
                   onChange={(evt) => setNotes(evt.target.value)}
                 ></textarea>
                 <br />
@@ -111,18 +117,17 @@ const Timer = () => {
                   </button>
                 ) : (
                     <p className="text-muted">
-                      Log in or create an account if you would like to save a session.
+                      Log in or create an account if you would like to save a
+                      session.
                     </p>
                   )}
               </article>
               <br />
             </section>
           </form>
+        </div>
       </div>
     </div>
-    </div>
-
-   
   );
 };
 

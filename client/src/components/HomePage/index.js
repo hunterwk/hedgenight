@@ -1,28 +1,24 @@
-import { useEffect, useState } from "react";
-import API from "../../util/API";
 import "./styles.css";
 import Timer from "../Timer";
 import AboutUs from "../AboutUs";
 import LoginPage from "../LoginPage";
+import { useAuth } from "../../util/authContext"
+import RecentHistory from "../RecentHistory";
+import 'bootstrap/dist/css/bootstrap.css';
 
+function HomePage(props) {
+  const { isLoggedIn } = useAuth()
 
-function HomePage() {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    API.getPublicExample().then((response) => {
-      setData(response.data);
-    });
-  }, []);
   return (
     <div className="row">
-    <div className="col-sm-4 timer mx-auto">
-      <Timer />
+      <div className={isLoggedIn ? "col-8 timer mx-auto" : "col-4 timer mx-auto"}>
+        <Timer useTimer={props.useTimer} />
       </div>
-      <div className="col-sm-4 mx-auto">
-      <AboutUs />
-      </div>
-      <div className="col-sm-4 mx-auto">
-      <LoginPage />
+
+      {!isLoggedIn && <div className="col-4 mx-auto"> <AboutUs /></div>}
+
+      <div className="col-4 mx-auto">
+        {isLoggedIn ? <RecentHistory /> : <LoginPage />}
       </div>
     </div>
   );
