@@ -7,10 +7,18 @@ const getProtectedExample = () => axios.get("/api/protected");
 const getPublicExample = () => axios.get("/api/unprotected");
 const findTasks = () => axios.get("/api/users/tasks");
 const createTasks = (tasks) => {
-   axios.post("/api/users/tasks", tasks); 
-} 
-const loadTasks = (id) => {axios.post("/api/users/tasks/" +id)}
+  axios.post("/api/users/tasks", tasks);
+};
+const loadTasks = (id) => {
+  axios.post("/api/users/tasks/" + id);
+};
 
-const API = { getProtectedExample, getPublicExample, createTasks, findTasks, loadTasks };
+const API = {
+  getProtectedExample,
+  getPublicExample,
+  createTasks,
+  findTasks,
+  loadTasks,
+};
 
 export default API;

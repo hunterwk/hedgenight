@@ -8,30 +8,29 @@ const TimeFormat = require("hh-mm-ss");
 
 
 
-function HistoryPage(props) {
+function RecentHistory(props) {
   const [data, setData] = useState([]);
   const history = useHistory()
   useEffect(() => {
     API.findTasks().then(({ data }) => {
-      setData(data);
+      let newData = data.slice(Math.max(data.length - 4,0))
+      setData(newData);
+      console.log(newData)
+      console.log(data[data.length -2])
     });
   }, []);
 
-  async function historyRedirect(tasks) {
-    props.setTimer(tasks)
-  }
-  function redirectorHelper() {
-    history.push("/")
-  }
-
   return (
+    
     <div className="HistoryCard container mx-auto">
+      <h3 className="text-align-center"> Recent Sessions:</h3>
       <div className="row">
+        
         {data.length === 0 ? (
-          <h3 className="text-center">You dont have any previous sessions!</h3>
+          <h4 className="text-center">You dont have any previous sessions!</h4>
         ) : (
-          data.map((tasks) => (
-            <div className="col-8"key={tasks._id.toString()}>
+          data.map((tasks) => 
+            <div className="col-12"key={tasks._id.toString()}>
             <div className="card">
               <div className="card-body">
                 <h4 className="card-title">Title: {tasks.name}</h4>
@@ -43,16 +42,13 @@ function HistoryPage(props) {
                   <br />
                   {tasks.notes}
                 </p>
-                <button onClick={() => historyRedirect(tasks).then(()=> redirectorHelper())}>Resume</button>
-                <button>Delete</button>
               </div>
             </div>
             </div>
-          ))
-        )}
+        ))}
       </div>
     </div>
   );
 }
 
-export default HistoryPage;
+export default RecentHistory;

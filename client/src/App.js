@@ -5,14 +5,23 @@ import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
 import Navbar from "./components/Navbar";
 import HistoryCard from "./components/History";
-import ProtectedExamplePage from "./components/ProtectedExamplePage";
 import { ProvideAuth } from "./util/authContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Logo from "./components/Logo/hedgenightlogo.png";
 import GoT from "./components/GoTblock";
 import Footer from "./components/Footer";
+import {useEffect, useState} from "react";
+import API from "./util/API";
+
+
 
 function App() {
+  const [useTimer, setTimer]= useState({
+    name: "",
+    notes: "",
+    duration: 0
+  })
+  
   return (
     <ProvideAuth>
       <Router>
@@ -27,7 +36,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <HomePage useTimer={useTimer} setTimer={setTimer}/>
           </Route>
           <Route path="/login">
             <LoginPage />
@@ -36,7 +45,7 @@ function App() {
             <SignupPage />
           </Route>
           <ProtectedRoute path="/protected/History">
-            <HistoryCard />
+            <HistoryCard setTimer={setTimer} />
           </ProtectedRoute>
         </Switch>
       </Router>
