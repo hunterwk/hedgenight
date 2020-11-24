@@ -6,8 +6,6 @@ import "./styles.css";
 
 const TimeFormat = require("hh-mm-ss");
 
-
-
 function HistoryPage(props) {
   const [data, setData] = useState([]);
   const history = useHistory()
@@ -23,6 +21,14 @@ function HistoryPage(props) {
   function redirectorHelper() {
     history.push("/")
   }
+ const clickDelete= async id => {
+    console.log(id)
+    API.deleteTask()
+  //   const requestMeth ={
+  //     method: 'DELETE'
+  //   }
+  //   fetch("/api/users/tasks/" + data.tasks._id)
+   }
 
   return (
     <div className="HistoryCard container mx-auto">
@@ -44,7 +50,7 @@ function HistoryPage(props) {
                   {tasks.notes}
                 </p>
                 <button onClick={() => historyRedirect(tasks).then(()=> redirectorHelper())}>Resume</button>
-                <button>Delete</button>
+                <button onClick={() => clickDelete(tasks._id)}>Delete</button>
               </div>
             </div>
             </div>
