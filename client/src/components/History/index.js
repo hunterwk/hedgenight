@@ -21,14 +21,12 @@ function HistoryPage(props) {
   function redirectorHelper() {
     history.push("/")
   }
- const clickDelete= async id => {
-    console.log(id)
-    API.deleteTask()
-  //   const requestMeth ={
-  //     method: 'DELETE'
-  //   }
-  //   fetch("/api/users/tasks/" + data.tasks._id)
-   }
+  async function clickDelete(id) {
+    const resp = await fetch(`/api/users/tasks/${id}`, {
+      method: "DELETE"
+    });
+    return resp;
+  }
 
   return (
     <div className="HistoryCard container mx-auto">

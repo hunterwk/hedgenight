@@ -1,39 +1,49 @@
 const db = require("../models");
 
 const findAllTasks = (req, res) => {
-    db.User.findById(req.user.id)
+  db.User.findById(req.user.id)
     .populate("tasks")
-    .then(user => {
-        res.json(user.tasks)
-    }).catch(err => {
-        console.log(err)
-        res.sendStatus(400)
+    .then((user) => {
+      res.json(user.tasks);
     })
-}
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(400);
+    });
+};
 
 const deleteTask = (req, res) => {
-    res.end()
-}
+  const id = req.params.id;
+  db.User.remove(
+    { _id: id }
+      .then((data) => {
+        res.json(data);
+      })
+      .catch((err) => {
+        res.json(err);
+      })
+  );
+};
 
 const createTask = (req, res) => {
-    console.log(req.body)
-    db.User.findById(req.user.id)
-    .then((user)=>{
-        return user.addTask(req.body)
+  console.log(req.body);
+  db.User.findById(req.user.id)
+    .then((user) => {
+      return user.addTask(req.body);
     })
-    .then((task)=>{
-        res.json(task)
+    .then((task) => {
+      res.json(task);
     })
-    .catch(err => {
+    .catch((err) => {
       res.json(err);
     });
-}
+};
 
 const continueTask = (req, res) => {
-    console.log(req.params.id)
-    db.User.findById(req.task._id)
-    // findbyId from dbUser 
-    // pass info to front end timer
-}
+  console.log(req.params.id);
+  db.User.findById(req.task._id);
+  // findbyId from dbUser
+  // pass info to front end timer
+};
 
-module.exports = { findAllTasks, deleteTask, createTask, continueTask }
+module.exports = { findAllTasks, deleteTask, createTask, continueTask };

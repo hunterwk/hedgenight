@@ -7,19 +7,19 @@ const authController = require("./controllers/auth.controller");
 const userController = require("./controllers/user.controller");
 
 const { handleErrors } = require("./middleware/error.middleware");
-
+const Tasks = require("./models/task.model");
+const { User } = require("./models");
 
 if (!process.env.SERVER_SECRET) {
-
   throw new Error("SERVER_SECRET is not set.");
 }
 
 const uri = process.env.MONGODB_URI || "mongodb://localhost/hedgenight";
-mongoose.connect(uri, { 
-  useNewUrlParser: true,  
+mongoose.connect(uri, {
+  useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
-  useFindAndModify: false
+  useFindAndModify: false,
 });
 
 const app = express();
@@ -48,8 +48,8 @@ app.get("/api/protected", hasValidToken, (req, res) => {
 
 app.get("/api/users/tasks", hasValidToken, userController.findAllTasks);
 app.post("/api/users/tasks", hasValidToken, userController.createTask);
-app.delete("/api/users/tasks/:id", hasValidToken, userController.deleteTask);
 app.post("/api/users/tasks/:id", hasValidToken, userController.continueTask);
+app.delete("/api/users/tasks/:id", hasValidToken , userController.deleteTask);
 
 app.use(handleErrors);
 

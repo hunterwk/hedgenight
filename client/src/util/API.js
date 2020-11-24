@@ -12,6 +12,9 @@ const createTasks = (tasks) => {
 const loadTasks = (id) => {
   axios.post("/api/users/tasks/" + id);
 };
+const deleteTasks = (id) => {
+  axios.delete("/api/users/tasks"+ id);
+};
 
 const API = {
   getProtectedExample,
@@ -19,6 +22,7 @@ const API = {
   createTasks,
   findTasks,
   loadTasks,
+  deleteTasks
 };
 
 export default API;
