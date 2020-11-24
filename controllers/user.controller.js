@@ -12,7 +12,13 @@ const findAllTasks = (req, res) => {
 }
 
 const deleteTask = (req, res) => {
-    res.end()
+    db.Task.findByIdAndDelete({ _id: req.params.id })
+    .then(task => {
+        res.json(task)
+    }).catch(err => {
+        console.log(err)
+        res.sendStatus(422)
+    })
 }
 
 const updateTask = (req, res) => {
