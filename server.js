@@ -50,6 +50,7 @@ app.get("/api/users/tasks", hasValidToken, userController.findAllTasks);
 app.post("/api/users/tasks", hasValidToken, userController.createTask);
 app.delete("/api/users/tasks/:id", hasValidToken, userController.deleteTask);
 app.post("/api/users/tasks/:id", hasValidToken, userController.continueTask);
+app.put("/api/users/tasks/:id", hasValidToken, userController.updateTask);
 
 app.use(handleErrors);
 
