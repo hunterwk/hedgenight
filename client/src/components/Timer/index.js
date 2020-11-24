@@ -99,6 +99,8 @@ const Timer = (props) => {
                 <textarea
                   value={notes}
                   type="text"
+                  rows="6"
+                  width="100%"
                   onChange={(evt) => setNotes(evt.target.value)}
                 ></textarea>
                 <br />

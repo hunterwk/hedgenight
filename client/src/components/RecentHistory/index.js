@@ -11,7 +11,7 @@ function RecentHistory(props) {
   const history = useHistory();
   useEffect(() => {
     API.findTasks().then(({ data }) => {
-      let newData = data.slice(Math.max(data.length - 4, 0));
+      let newData = data.slice(Math.max(data.length - 2, 0));
       setData(newData);
       console.log(newData);
       console.log(data[data.length - 2]);

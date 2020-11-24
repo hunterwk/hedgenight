@@ -59,6 +59,10 @@ img {
   text-align: center;
 }
 
+textarea {
+  min-width: 100%,
+}
+
 .timer {
 
 }
