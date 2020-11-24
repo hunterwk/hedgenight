@@ -25,6 +25,16 @@ const deleteTask = (req, res) => {
   );
 };
 
+const updateTask = (req, res) => {
+    db.Task.findOneAndUpdate({ _id: req.params.id }, req.body)
+    .then(task => {
+        res.json(task)
+    }).catch(err => {
+        console.log(err)
+        res.sendStatus(422)
+    })
+}
+
 const createTask = (req, res) => {
   console.log(req.body);
   db.User.findById(req.user.id)
@@ -46,4 +56,7 @@ const continueTask = (req, res) => {
   // pass info to front end timer
 };
 
+
 module.exports = { findAllTasks, deleteTask, createTask, continueTask };
+
+
