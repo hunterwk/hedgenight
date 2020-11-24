@@ -35,9 +35,6 @@ function App() {
           <Route path="/signup">
             <SignupPage />
           </Route>
-          <ProtectedRoute path="/protected/example">
-            <ProtectedExamplePage />
-          </ProtectedRoute>
           <ProtectedRoute path="/protected/History">
             <HistoryCard />
           </ProtectedRoute>

@@ -4,9 +4,11 @@ import "./styles.css";
 import Timer from "../Timer";
 import AboutUs from "../AboutUs";
 import LoginPage from "../LoginPage";
-
+import HistoryPage from "../History";
+import { useAuth } from "../../util/authContext"
 
 function HomePage() {
+  const { isLoggedIn} = useAuth()
   const [data, setData] = useState(null);
   useEffect(() => {
     API.getPublicExample().then((response) => {
@@ -22,7 +24,7 @@ function HomePage() {
       <AboutUs />
       </div>
       <div className="col-4 mx-auto">
-      <LoginPage />
+        {isLoggedIn ? <HistoryPage /> : <LoginPage />}
       </div>
     </div>
   );
