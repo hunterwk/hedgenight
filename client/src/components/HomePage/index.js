@@ -15,13 +15,13 @@ function HomePage() {
   }, []);
   return (
     <div className="row">
-    <div className="col-4 timer mx-auto">
+    <div className="col-sm-4 timer mx-auto">
       <Timer />
       </div>
-      <div className="col-4 mx-auto">
+      <div className="col-sm-4 mx-auto">
       <AboutUs />
       </div>
-      <div className="col-4 mx-auto">
+      <div className="col-sm-4 mx-auto">
       <LoginPage />
       </div>
     </div>
