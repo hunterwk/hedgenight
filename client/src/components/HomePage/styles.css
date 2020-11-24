@@ -1,6 +1,5 @@
 /* whole background */
 html {
-    background-color: rgb(150, 218, 212);
     background-blend-mode: soft-light;
 }
 
@@ -103,6 +102,7 @@ textarea {
   block-size: inherit;
   position: inherit;
   width: auto;
+  position: sticky;
 }
 
 .sessionTitle {
@@ -133,6 +133,13 @@ textarea {
   text-decoration: none;
   display: inline-block;
   font-size: inherit;
+}
+
+.noteBox {
+  background-position: left;
+  max-height: 140 rem;
+  min-height: 20rem;
+  width:
 }
 
 .row::after {
