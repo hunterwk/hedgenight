@@ -34,15 +34,7 @@ function Navbar() {
           Signup
         </NavLink>
       )}
-      {isLoggedIn && (
-        <NavLink
-          className="nav-link"
-          to="/protected/example"
-          activeClassName="nav-link-active"
-        >
-          Protected
-        </NavLink>
-      )}
+     
       {isLoggedIn && (
         <NavLink
           className="nav-link"
