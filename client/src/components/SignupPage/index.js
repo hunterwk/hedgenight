@@ -39,7 +39,7 @@ function SignupPage() {
     } else {
       setIsPending(true);
       signup({ username, password })
-        .then(() => history.push("/protected/example"))
+        .then(() => history.push("/protected/history"))
         .catch((error) => {
           console.log(error);
           alert("An error occurred.");

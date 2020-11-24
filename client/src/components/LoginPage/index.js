@@ -5,6 +5,7 @@ import { useAuth } from "../../util/authContext";
 const styles = {
   wrapper: {
     marginTop: "2rem",
+    
   },
   form: {
     display: "flex",
