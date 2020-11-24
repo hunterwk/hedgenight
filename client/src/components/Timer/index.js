@@ -61,13 +61,13 @@ const Timer = (props) => {
       <div className="container mx-auto col-6 col-s-9">
         <div className="app">
           <aside>
-            <div className="time">
-              <h1>
+            <h1>
+              <div className="time">
                 <span className="timer-span mx-auto">
                   {TimeFormat.fromS(seconds, "hh:mm:ss")}
                 </span>
-              </h1>
-            </div>
+              </div>
+            </h1>
           </aside>
           <br />
           <div className='startTimeBtn'>
@@ -99,6 +99,7 @@ const Timer = (props) => {
                 <label htmlFor="notes">Session Notes:</label>
                 <br />
                 <textarea
+                  className="notesBox"
                   value={notes}
                   type="text"
                   rows="6"
@@ -127,7 +128,7 @@ const Timer = (props) => {
           </form>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
