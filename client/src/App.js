@@ -25,11 +25,11 @@ function App() {
   return (
     <ProvideAuth>
       <Router>
-        <div className="row align-items-center">
-          <div className="col-8 float-left">
+        <div className="row align-items-center aboveNav">
+          <div className="col-8 float-left logo">
             <img src={Logo} alt="hedgenight" />
           </div>
-          <div className="col-4 float-right">
+          <div className="col-4 float-right headQuote">
             <GoT />
           </div>
         </div>
