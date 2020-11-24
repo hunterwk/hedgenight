@@ -70,15 +70,17 @@ const Timer = (props) => {
             </div>
           </aside>
           <br />
-          <button
-            className={`button button-primary button-primary-${
-              isActive ? "active" : "inactive"
-            }`}
-            onClick={toggle}
-          >
-            {isActive ? "Pause" : "Start Timer"}
-          </button>
-          <br />
+          <div className='startTimeBtn'>
+            <button
+              className={`button button-primary button-primary-${
+                isActive ? "active" : "inactive"
+                }`}
+              onClick={toggle}
+            >
+              {isActive ? "Pause" : "Start Timer"}
+            </button>
+            <br />
+          </div>
         </div>
         <div className="container mx-auto">
           <form>
@@ -114,11 +116,11 @@ const Timer = (props) => {
                     Save
                   </button>
                 ) : (
-                  <p className="text-muted">
-                    Log in or create an account if you would like to save a
-                    session.
-                  </p>
-                )}
+                    <p className="text-muted">
+                      Log in or create an account if you would like to save a
+                      session.
+                    </p>
+                  )}
               </article>
               <br />
             </section>

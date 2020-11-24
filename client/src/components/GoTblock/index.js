@@ -30,7 +30,7 @@ const GoT = () => {
     
     return (
         <div>
-            <div className="container" id="GOT">
+            <div className="container headercontent" id="GOT">
                 <span className="quote text-center">"{quoteText.sentence}"</span><br />
                 <span className="author text-center">- {namedOne} </span>
             </div>

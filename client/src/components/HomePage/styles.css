@@ -1,19 +1,41 @@
 /* whole background */
 html {
-    background-color: rgb(72, 131, 99);
+    background-color: rgb(150, 218, 212);
     background-blend-mode: soft-light;
-    text-anchor: middle;
 }
 
 
 /* logo */
 img {
-    height: 15rem;
+    height: 10em;
     width: auto;
+    max-width: 100vmax;
     image-rendering: auto;
     position: sticky;
     object-position: right;
 }
+
+.nav {
+  background-color: rgb(185, 221, 238);
+  position: sticky;
+  object-position: center;
+}
+
+.nav-link {
+  padding: 1em 0.5em;
+  color: white;
+  display: inline-block;
+}
+
+.nav-link:hover {
+  background-color: rgb(184, 184, 184);
+}
+
+.nav-link-active {
+  background-color: rgb(179, 190, 204);
+  
+}
+
 
 
 /* Game of Thrones Quote  */
@@ -30,6 +52,9 @@ img {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size-adjust: inherit;
+}
+.headquote {
+  position: center;
 }
 #GOT{
     border: 5rem;
@@ -56,31 +81,74 @@ img {
 }
 
 #timer-card {
-  text-align: center;
+  text-align: right;
+  column-width: 60%;
+  scroll-padding-top: 2rem;
 }
 
 textarea {
-  min-width: 100%,
+  min-width: 100%;
+  background-blend-mode: overlay;
+  width: auto;
+  height: auto;
 }
 
-.timer {
-
+.aboveNav {
+  max-height: 20rem;
+  min-height: 5rem;
+  height: auto;
 }
 
-.sessionTitle {}
+.time {
+  block-size: inherit;
+  position: inherit;
+  width: auto;
+}
+
+.sessionTitle {
+  background-color: winter;
+  block-size: fit;
+  position: inherit;
+  object-fit: inherit;
+  background-position-y: inherit;
+  object-position: left;
+}
 
 .sessionNotes {
-    position: sticky;
+  block-size: fit;
+  position: inherit;
+  object-fit: inherit;
+  background-position-y: inherit;
 }
 
-.saveTimeBtn {}
+.saveTimeBtn {
+  block-size: auto;
+  position: right;
+  object-fit: inherit;
+}
+.startTimeBtn {
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: inherit;
+}
 
 .row::after {
   content: "";
   clear: both;
   display: table;
 }
-
+.about-title {
+  font-family: 'IM Fell English', serif;
+  margin-block: 2rem; 
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.about-text{
+  padding: .5rem 3rem;
+}
 /* [class*="col-"] {
   float: left;} */
   /* padding: 15px; */
@@ -89,9 +157,12 @@ textarea {
 div {
   /* font-family: "Lucida Sans", sans-serif; */
   font-family: 'IM Fell English', serif;
+  padding-left: .5rem;
+  align-items: left;
+  text-shadow: lightblue;
 }
 
-.header  {
+header {
   display: flex;
   align-items: center;
 }
@@ -121,22 +192,6 @@ div {
   background-color: #0099cc;
 } */
 
-/* .aside {
-  background-color: #33b5e5;
-  padding: 15px;
-  color: #ffffff;
-  text-align: center;
-  font-size: 14px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-} */
-
-/* .footer {
-  background-color: #0099cc;
-  color: #ffffff;
-  text-align: center;
-  font-size: 12px;
-  padding: 15px;
-} */
 
 /* For mobile phones: */
 [class*="col-"] {
@@ -186,11 +241,11 @@ div {
   padding: 15px;
 }
 
-/* .header {
+.header {
   background-color: #9933cc;
   color: #ffffff;
   padding: 15px;
-} */
+}
 
 .menu ul {
   list-style-type: none;
@@ -219,13 +274,13 @@ div {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 } */
 
-/* .footer {
-  background-color: #0099cc;
+.footer {
+  background-color: #7ca9b8;
   color: #ffffff;
   text-align: center;
   font-size: 12px;
   padding: 15px;
-} */
+}
 
 /* For mobile phones: */
 [class*="col-"] {
@@ -261,4 +316,10 @@ div {
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
+}
+
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
 }
