@@ -31,7 +31,7 @@ const Timer = (props) => {
     helper();
     try {
       props.useTimer._id.toString()
-        ? API.updateTask({ name: title, notes: notes, duration: seconds })
+        ? API.updateTasks({ name: title, notes: notes, duration: seconds })
         : API.createTasks({ name: title, notes: notes, duration: seconds });
       console.log({
         name: title,
