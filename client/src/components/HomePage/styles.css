@@ -71,9 +71,10 @@ img {
 
 
 .timer-span {
-    color: rgb(58, 58, 58);
-    font-size: 48px;
-    background-origin: content-box;
+    color: whitesmoke;
+    font-size: calc(3rem + 4vw);
+    background-color:black;
+    border: solid gray 5px;
     font-family: 'IM Fell English', serif;
     text-align: center;
     object-position: inherit;
@@ -165,8 +166,6 @@ textarea {
 div {
   /* font-family: "Lucida Sans", sans-serif; */
   font-family: 'IM Fell English', serif;
-  padding-left: .5rem;
-  align-items: left;
   text-shadow: lightblue;
 }
 

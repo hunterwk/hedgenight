@@ -43,7 +43,7 @@ function Navbar() {
           History
         </NavLink>
       )}
-      {isLoggedIn && <button onClick={logout}>Logout</button>}
+      {isLoggedIn && <NavLink to="/Login" className="nav-link" onClick={logout}>Logout</NavLink>}
     </nav>
   );
 }
