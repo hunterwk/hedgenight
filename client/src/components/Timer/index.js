@@ -56,9 +56,8 @@ const Timer = (props) => {
 
   return (
     <div id="timer-card" className="card">
-      <div className="container mx-auto col-6 col-s-9">
         <div className="app">
-          <aside>
+          
             <h1>
               <div className="time">
                 <span className="timer-span mx-auto">
@@ -66,7 +65,7 @@ const Timer = (props) => {
                 </span>
               </div>
             </h1>
-          </aside>
+          
           <br />
           <div className='startTimeBtn'>
             <button
@@ -125,7 +124,6 @@ const Timer = (props) => {
             </section>
           </form>
         </div>
-      </div>
     </div >
   );
 };

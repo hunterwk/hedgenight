@@ -4,6 +4,7 @@ html {
 }
 
 
+
 /* logo */
 img {
     height: 10em;
@@ -77,10 +78,11 @@ img {
     text-align: center;
     object-position: inherit;
     position: sticky;
+
 }
 
 #timer-card {
-  text-align: right;
+  text-align: center;
   column-width: 60%;
   scroll-padding-top: 2rem;
 }
@@ -139,7 +141,6 @@ textarea {
   background-position: left;
   max-height: 140 rem;
   min-height: 20rem;
-  width:
 }
 
 .row::after {

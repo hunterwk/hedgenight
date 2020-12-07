@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import API from "../../util/API";
 import "../HomePage/styles.css";
 import "./styles.css";
@@ -8,7 +8,7 @@ const TimeFormat = require("hh-mm-ss");
 
 function RecentHistory(props) {
   const [data, setData] = useState([]);
-  const history = useHistory();
+  
   useEffect(() => {
     API.findTasks().then(({ data }) => {
       let newData = data.slice(Math.max(data.length - 2, 0));
@@ -19,9 +19,9 @@ function RecentHistory(props) {
   }, []);
 
   return (
-    <div className="HistoryCard container mx-auto">
-      <h3 className="text-align-center"> Recent Sessions:</h3>
-      <Link to="/history">View all previous sessions</Link>
+    <div className="HistoryCard container mx-auto card">
+      <h3 className="text-align-center about-title"> Recent Sessions:</h3>
+      <Link to="/protected/history" className="text-align-center">View all previous sessions</Link>
       <div className="row">
         {data.length === 0 ? (
           <h4 className="text-center">You dont have any previous sessions!</h4>

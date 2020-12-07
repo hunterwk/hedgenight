@@ -4,7 +4,6 @@ import { useAuth } from "../../util/authContext";
 
 const styles = {
   wrapper: {
-    marginTop: "2rem",
     
   },
   form: {
@@ -49,8 +48,8 @@ function LoginPage() {
     }
   };
   return (
-    <div style={styles.wrapper}>
-      <h1>Login</h1>
+    <div style={styles.wrapper} className="card">
+      <h1 className="about-title">Login</h1>
       <div>{isPending && "Loading..."}</div>{" "}
       <form disabled={isPending} style={styles.form} onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
