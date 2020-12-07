@@ -55,12 +55,12 @@ const Timer = (props) => {
   }, [isActive, seconds]);
 
   return (
-    <div id="timer-card" className="card">
-        <div className="app">
+    <div id="timer-card">
+        <div className="app enable-rounded">
           
             <h1>
-              <div className="time">
-                <span className="timer-span mx-auto">
+              <div className="time mx-auto">
+                <span className="timer-span">
                   {TimeFormat.fromS(seconds, "hh:mm:ss")}
                 </span>
               </div>
@@ -69,6 +69,7 @@ const Timer = (props) => {
           <br />
           <div className='startTimeBtn'>
             <button
+            id="timer-button"
               className={`button button-primary button-primary-${
                 isActive ? "active" : "inactive"
                 }`}
@@ -79,7 +80,8 @@ const Timer = (props) => {
             <br />
           </div>
         </div>
-        <div className="container mx-auto">
+        <br />
+        <div className="card container mx-auto">
           <form>
             <section>
               <section className="sessionTitle">

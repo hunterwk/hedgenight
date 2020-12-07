@@ -64,16 +64,20 @@ img {
   box-sizing: border-box;
 } */
 
+#timer-button {
+  background-color: red;
+}
+
 .app {
   color: whitesmoke;
   background-color: black;
   border: solid gray 5px;
+  border-radius: 25px;
   font-family: "IM Fell English", serif;
 }
 
 .timer-span {
   font-size: calc(3rem + 4vw);
-  white-space: nowrap;
   text-align: center;
   object-position: inherit;
   position: sticky;
