@@ -48,7 +48,7 @@ function LoginPage() {
     }
   };
   return (
-    <div style={styles.wrapper} className="container">
+    <div style={styles.wrapper} className="card">
       <h1 className="about-title mx-auto">Login</h1>
       <div>{isPending && "Loading..."}</div>{" "}
       <form disabled={isPending} style={styles.form} onSubmit={handleSubmit} className="mx-auto">
