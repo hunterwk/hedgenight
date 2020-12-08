@@ -68,6 +68,7 @@ img {
 }
 
 .app {
+  margin-left: 1px;
   color: whitesmoke;
   background-color: black;
   border: solid gray 5px;
