@@ -56,7 +56,7 @@ const Timer = (props) => {
 
   return (
     <div id="timer-card">
-        <div className="app enable-rounded">
+        <div className="app enable-rounded container">
           
             <h1>
               <div className="time mx-auto">
