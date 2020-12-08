@@ -48,10 +48,10 @@ function LoginPage() {
     }
   };
   return (
-    <div style={styles.wrapper} className="card">
-      <h1 className="about-title">Login</h1>
+    <div style={styles.wrapper} className="container">
+      <h1 className="about-title mx-auto">Login</h1>
       <div>{isPending && "Loading..."}</div>{" "}
-      <form disabled={isPending} style={styles.form} onSubmit={handleSubmit}>
+      <form disabled={isPending} style={styles.form} onSubmit={handleSubmit} className="mx-auto">
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -73,7 +73,7 @@ function LoginPage() {
           Submit
         </button>
       </form>
-      <div>
+      <div className="mx-auto">
         <a href="/signup">New here? Sign up!</a>
 
       </div>

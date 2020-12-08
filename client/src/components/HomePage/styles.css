@@ -2,7 +2,6 @@
 html {
   background-blend-mode: soft-light;
 }
-
 /* logo */
 img {
   height: 10em;
@@ -145,11 +144,7 @@ textarea {
   min-height: 20rem;
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+
 .about-title {
   font-family: "IM Fell English", serif;
   margin-block: 2rem;

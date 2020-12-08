@@ -81,8 +81,9 @@ const Timer = (props) => {
           </div>
         </div>
         <br />
-        <div className="card container mx-auto">
+        <div className="container mx-auto">
           <form>
+            < br/>
             <section>
               <section className="sessionTitle">
                 <label htmlFor="name header">Session Title:</label>
