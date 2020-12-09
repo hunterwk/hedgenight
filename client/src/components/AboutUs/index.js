@@ -1,14 +1,8 @@
-import { useEffect, useState } from "react";
-import API from "../../util/API";
+import React from "react";
+
 
 function AboutUs() {
 
-    const [data, setData] = useState("");
-    useEffect(() => {
-        API.getPublicExample().then((response) => {
-          setData(response.data);
-        });
-      }, []);
       return (
           <div className="card">
           <h2 className="about-title"> Effortlessly organize and track your day to day</h2>
